@@ -52,9 +52,6 @@ public class SmartPhonesPage {
         List<String> titles = this.productTitles.stream()
                 .map(SelenideElement::getText)
                 .collect(Collectors.toList());
-        titles.forEach(System.out::println);
-        System.out.println(titles.size());
-        System.out.println(productTitles.size());
         Assertions.assertTrue(titles.stream().allMatch(x->x.contains("Apple")), "Несоответствие товара производителю");
         return  titles;
     }
